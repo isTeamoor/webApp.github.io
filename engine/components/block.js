@@ -3,10 +3,9 @@ export const block = {
   template: `
     <div class='my-block'>
         my block!{{WebAppInitData}} {{initData}}
-        <button @click="window.Telegram.WebApp.sendData('timure'); console.log(sent)"></button>
     </div>
     <div class='my-block'>
-    <button @click="window.Telegram.WebApp.sendData('timure'); console.log('sent')"></button>
+    <button @click="window.Telegram.WebApp.sendData('timure'); console.log(sent)"></button>
 </div>
     `,
   data() {

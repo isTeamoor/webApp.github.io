@@ -6,3 +6,8 @@ div.mainWindow {
 div.my-block {
     background-color: bisque;
 }
+
+button {
+    width: 50px;
+    height: 10px;
+}
