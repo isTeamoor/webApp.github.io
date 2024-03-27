@@ -2,15 +2,6 @@ export const App = {
   name: "App",
 
   template: `
-  <h1>Works!</h1>
-  <button @click="count++">
-      Счётчик кликов — {{ count }}
-    </button>
+  <div class='mainWindow></div>
   `,
-
-  data() {
-    return {
-      count: 0,
-    };
-  },
 };
