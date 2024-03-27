@@ -3,8 +3,8 @@ export const App = {
 
   template: `
   <div class='mainWindow'>
-    <h1>Greetings!</div>
-    <h2>Hi</div>
+    <h1>Greetings!</h1>
+    <h2>Hi</h2>
     <button>Button</button>
   </div>
   `,
