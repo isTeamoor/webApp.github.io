@@ -5,6 +5,9 @@ export const block = {
         my block!{{WebAppInitData}} {{initData}}
         <button @click="window.Telegram.WebApp.sendData('timure'); console.log(sent)"></button>
     </div>
+    <div class='my-block'>
+    <button @click="window.Telegram.WebApp.sendData('timure'); console.log('sent')"></button>
+</div>
     `,
   data() {
     return {
