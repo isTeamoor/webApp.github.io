@@ -7,7 +7,7 @@ export const block = {
     `,
   data() {
     return {
-      WebAppInitData: window.Telegram.WebApp.WebAppInitData,
+      WebAppInitData: window.Telegram.WebApp.initDataUnsafe,
     };
   },
 };
