@@ -2,12 +2,12 @@ export const block = {
   name: "my-block",
   template: `
     <div class='my-block'>
-        my block!{{platform}}
+        my block!{{WebAppInitData}}
     </div>
     `,
   data() {
     return {
-      platform: window.Telegram.WebApp.platform,
+      WebAppInitData: window.Telegram.WebApp.WebAppInitData,
     };
   },
 };
