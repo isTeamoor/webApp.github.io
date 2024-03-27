@@ -1,3 +1,4 @@
 div.mainWindow {
     background: linear-gradient(white, skyblue);
+    border: 10px solid black;
 }
