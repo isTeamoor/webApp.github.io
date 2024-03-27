@@ -2,3 +2,7 @@ div.mainWindow {
     background: linear-gradient(white, skyblue);
     border: 1px solid black;
 }
+
+div.my-block {
+    background-color: bisque;
+}
