@@ -11,10 +11,11 @@
 
 .navButton {
     flex-grow: 1;
+    padding: 1em 0 1em 0;
 }
 
 .display {
-    height: 500em;
+    height: 200em;
     border: 2px solid black;
-    background: linear-gradient(gray, white);
+    background: linear-gradient(gray 2%, bisque 5%, white);
 }
