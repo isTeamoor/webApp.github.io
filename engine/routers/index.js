@@ -1,4 +1,5 @@
 import { homePage } from "../components/homePage.js";
+import { extra } from "../components/extra.js";
 import { profile } from "../components/userProfile.js";
 
 const routes = [
@@ -6,6 +7,11 @@ const routes = [
     name: "homepage",
     path: "/",
     component: homePage,
+  },
+  {
+    name: "extra",
+    path: "/extra",
+    component: extra,
   },
   {
     name: "user_profile",
