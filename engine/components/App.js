@@ -20,15 +20,9 @@ export const App = {
     };
   },
 
-  methods: {
-    checkUser() {
-      fetch(`http://127.0.0.1:8000/db/checkUser/${WebAppInitData.user.id}`)
-        .then((d) => d.json())
-        .then((d) => (this.currentUser = d["status"]));
-    },
-  },
-
   beforeCreate() {
-    checkUser();
+    fetch(`http://127.0.0.1:8000/db/checkUser/${WebAppInitData.user.id}`)
+      .then((d) => d.json())
+      .then((d) => (this.currentUser = d["status"]));
   },
 };
