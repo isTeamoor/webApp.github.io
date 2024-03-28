@@ -1,7 +1,7 @@
 export const App = {
   name: "App",
   template: `
-  <h1>Greetings!</h1>
+  <h1>Status: {{currentUser}}</h1>
 
   <div class = 'navMenu'>
     <button @click="$router.push('/')" class='navButton'>Home</button>
@@ -13,4 +13,22 @@ export const App = {
     <router-view/>
   </div>
   `,
+
+  data() {
+    return {
+      currentUser: "",
+    };
+  },
+
+  methods: {
+    checkUser() {
+      fetch(`http://127.0.0.1:8000/db/checkUser/${WebAppInitData.user.id}`)
+        .then((d) => d.json())
+        .then((d) => (this.currentUser = d["status"]));
+    },
+  },
+
+  beforeCreate() {
+    checkUser();
+  },
 };
