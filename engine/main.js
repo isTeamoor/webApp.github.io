@@ -1,8 +1,9 @@
-import { App } from "./components/App.js";
+import router from "./routers/index.js";
 
-import { block } from "./components/block.js";
+import { App } from "./components/App.js";
+import { profile } from "./components/userProfile.js";
 
 const app = Vue.createApp(App);
-app.component("my-block", block);
+app.component("user-profile", profile);
 
-app.mount("#app");
+app.use(router).mount("#app");
