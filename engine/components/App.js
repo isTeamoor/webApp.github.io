@@ -27,7 +27,7 @@ export const App = {
       field: "user_id",
       value: WebAppInitData.user.id,
     });
-    if (checkUser) {
+    if (checkUser.length > 0) {
       this.currentUser = "exists";
     } else {
       this.currentUser = "new";
