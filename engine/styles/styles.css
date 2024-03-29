@@ -19,3 +19,8 @@
     border: 2px solid black;
     background: linear-gradient(gray 2%, bisque 5%, white);
 }
+
+.imgPreview {
+    width: 160px;
+    height: 160px;
+}

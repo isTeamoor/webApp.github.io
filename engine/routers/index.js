@@ -1,5 +1,5 @@
 import { homePage } from "../components/homePage.js";
-import { extra } from "../components/extra.js";
+import { newLot } from "../components/newLot.js";
 import { profile } from "../components/userProfile.js";
 
 const routes = [
@@ -9,9 +9,9 @@ const routes = [
     component: homePage,
   },
   {
-    name: "extra",
-    path: "/extra",
-    component: extra,
+    name: "newLot",
+    path: "/newLot",
+    component: newLot,
   },
   {
     name: "user_profile",

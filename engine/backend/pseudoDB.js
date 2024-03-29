@@ -8,19 +8,20 @@ export const users = [
   },
 ];
 
-function nextID(table) {
+export function nextID(table) {
   let maxID = 0;
   for (let item of table) {
     if (item.id >= maxID) {
       maxID = item.id + 1;
     }
+    return maxID;
   }
 }
 
 export function req_get(table, condition) {
   let response = [];
   for (let item of table) {
-    if (item[condition.field] == item[condition.value]) {
+    if (item[condition.field] == condition.value) {
       response.push(item);
     }
   }
