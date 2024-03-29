@@ -1,3 +1,5 @@
+import { users, req_get } from "../backend/pseudoDB.js";
+
 export const App = {
   name: "App",
   template: `
@@ -20,9 +22,15 @@ export const App = {
     };
   },
 
-  beforeCreate() {
-    fetch(`http://127.0.0.1:8000/db/checkUser/${WebAppInitData.user.id}`)
-      .then((d) => d.json())
-      .then((d) => (this.currentUser = d["status"]));
+  created() {
+    let checkUser = req_get(users, {
+      field: "user_id",
+      value: WebAppInitData.user.id,
+    });
+    if (checkUser) {
+      this.currentUser = "exists";
+    } else {
+      this.currentUser = "new";
+    }
   },
 };
