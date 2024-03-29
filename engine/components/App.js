@@ -3,10 +3,10 @@ import { users, req_get, nextID } from "../backend/pseudoDB.js";
 export const App = {
   name: "App",
   template: `
-  <h1>Status: {{currentUser}} {{check}}</h1>
+  <h1>Hi</h1>
 
   <div class = 'navMenu'>
-    <button @click="$router.push('/')" class='navButton'>Home</button>
+    <button @click="$router.push('/showAll')" class='navButton'>Активные аукционы</button>
     <button @click="$router.push('/newLot')" class='navButton'>Выставить лот</button>
     <button @click="$router.push('/myProfile')" class='navButton'>User Profile</button>
   </div>
