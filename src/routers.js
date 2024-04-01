@@ -7,9 +7,9 @@ const routes = [
     component: () => import("../src/components/screens/Home.vue"),
   },
   {
-    name: "ShowAucs",
-    path: "/showAucs",
-    component: () => import("../src/components/screens/ShowAucs.vue"),
+    name: "AucsList",
+    path: "/aucsList",
+    component: () => import("../src/components/screens/AucsList.vue"),
   },
   {
     name: "newLot",

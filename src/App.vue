@@ -2,7 +2,7 @@
     <h1>Hi</h1>
 
     <div class='navMenu'>
-        <button @click="$router.push('/showAucs')" class='navButton'>Активные аукционы</button>
+        <button @click="$router.push('/aucsList')" class='navButton'>Активные аукционы</button>
         <button @click="$router.push('/newLot')" class='navButton'>Выставить лот</button>
         <button @click="$router.push('/userProfile')" class='navButton'>User Profile</button>
     </div>

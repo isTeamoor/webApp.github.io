@@ -3,14 +3,28 @@
         <div class='lotPreview-img'></div>
 
         <div class='lotInfo'>
-            <div class='lotPreview-label'>lotPreview-label</div>
-            <div class='lotPreview-description'>lotPreview-description</div>
-            <div class='lotPreview-bidsInfo'>lotPreview-bidsInfo</div>
+            <div class='lotPreview-label'>lot#{{ this.id }} - {{ this.label }}</div>
+            <div class='lotPreview-description'>{{ this.description }}</div>
+            <div class='lotPreview-bidsInfo'>{{ this.bids }}</div>
         </div>
     </div>
 </template>
+
+
+
 <script>
+export default {
+    props: {
+        id: Number,
+        label: String,
+        description: String,
+        bids: String,
+    }
+}
 </script>
+
+
+
 <style scoped>
 .lotPreview-img {
     width: 160px;
