@@ -13,6 +13,7 @@ export default {
             WebAppInitData: window.Telegram.WebApp.initDataUnsafe,
         };
     },
+
 }
 </script>
 <style></style>
