@@ -24,6 +24,6 @@ const routes = [
 ];
 
 export const router = createRouter({
-  history: createWebHistory("/"),
+  history: createWebHistory("webApp.github.io/docs/"),
   routes,
 });
