@@ -23,9 +23,7 @@ const routes = [
   },
 ];
 
-const router = createRouter({
-  history: createWebHistory(window.location.pathname),
+export const router = createRouter({
+  history: createWebHistory("/"),
   routes,
 });
-
-export default router;
