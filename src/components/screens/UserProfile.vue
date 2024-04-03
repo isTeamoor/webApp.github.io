@@ -10,9 +10,15 @@
 export default {
     data() {
         return {
-            WebAppInitData: window.Telegram.WebApp.initDataUnsafe,
+            WebAppInitData: {}
         };
     },
+    created() {
+        if (window.Telegram.WebApp.hasOwnProperty('user')) {
+            this.WebAppInitData = window.Telegram.WebApp
+        } else { this.WebAppInitData = { 'user': { 'id': 0, 'first_name': 'undefined', 'last_name': 'undefined', 'username': 'undefined' } } }
+    }
 }
+
 </script>
 <style></style>

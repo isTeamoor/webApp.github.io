@@ -1,12 +1,14 @@
 <template>
-    <div class='lotPreview'>
-        <div class='lotPreview-img'></div>
+    <div class='background'>
 
-        <div class='lotInfo'>
-            <div class='lotPreview-label'>lot#{{ this.id }} - {{ this.label }}</div>
-            <div class='lotPreview-description'>{{ this.description }}</div>
-            <div class='lotPreview-bidsInfo'>{{ this.bids }}</div>
+        <img class="imgPreview" :src="this.details.img + '/c'" />
+
+        <div class='info'>
+            <div class='header'>lot#{{ this.details.id }} - {{ this.details.label }}</div>
+            <div class='description'>{{ this.details.description }}</div>
+            <div class='bids'>{{ this.details.bids }}</div>
         </div>
+
     </div>
 </template>
 
@@ -14,11 +16,12 @@
 
 <script>
 export default {
+    name: 'lot-preview',
     props: {
-        id: Number,
-        label: String,
-        description: String,
-        bids: String,
+        details: Object
+    },
+    mounted() {
+        console.log(this.details)
     }
 }
 </script>
@@ -26,17 +29,17 @@ export default {
 
 
 <style scoped>
-.lotPreview-img {
-    width: 160px;
-    background-color: chocolate;
-}
-
-.lotPreview {
+.background {
     border: 2px solid black;
     border-radius: 1%;
     display: flex;
     align-items: stretch;
     height: 164px;
     margin-top: 1em;
+}
+
+img {
+    width: 160px;
+    background-color: chocolate;
 }
 </style>

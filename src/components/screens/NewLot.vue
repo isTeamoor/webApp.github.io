@@ -1,14 +1,14 @@
 <template>
-    <div class='newLot'>
+    <div>
         <h1>Создание нового лота</h1>
         <img class="imgPreview" />
 
-        <form enctype="multipart/form-data">
+        <form enctype="multipart/form-data" action="http://127.0.0.1:8000/db/newLot" method="post">
             <label for="new label">Назовите ваш товар</label>
             <input type="text" id="new label" name="label">
 
             <label for="new textContent">Добавьте краткое описание лота</label>
-            <textarea name="textContent" id="new textContent" rows="10" cols="30"></textarea><br>
+            <textarea name="description" id="new textContent" rows="10" cols="30"></textarea><br>
 
             <label for="new textContent">Стартовая цена</label>
             <input type='number' min='1000' step='1000' />
@@ -18,7 +18,7 @@
             <p>сум</p>
 
             <label for="new img">Добавьте фото товара</label>
-            <input type="file" name="img" id="new img" @change="showPreview" />
+            <input type="file" name="img" id="new img" accept="image/*" @change="showPreview" />
 
             <button type="submit">Выставить лот на торги</button>
         </form>

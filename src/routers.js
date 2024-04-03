@@ -7,12 +7,12 @@ const routes = [
     component: () => import("../src/components/screens/Home.vue"),
   },
   {
-    name: "AucsList",
-    path: "/aucsList",
-    component: () => import("../src/components/screens/AucsList.vue"),
+    name: "LotsList",
+    path: "/lotsList",
+    component: () => import("../src/components/screens/LotsList.vue"),
   },
   {
-    name: "newLot",
+    name: "NewLot",
     path: "/newLot",
     component: () => import("../src/components/screens/NewLot.vue"),
   },
@@ -24,6 +24,6 @@ const routes = [
 ];
 
 export const router = createRouter({
-  history: createWebHistory("webApp.github.io/docs/"),
+  history: createWebHistory(),
   routes,
 });
