@@ -38,7 +38,7 @@ export default {
             this.lotDetails = lot;
         },
         get_allLots() {
-            fetch("http://127.0.0.1:8000/db/allLots").then(d => d.json()).then(d => this.serverData = d)
+            fetch("https://isteamoor1.pythonanywhere.com/db/allLots").then(d => d.json()).then(d => { this.serverData = d; console.log(d) })
         },
         applyFilters(filters) {
             console.log(filters)

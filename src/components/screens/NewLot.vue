@@ -3,7 +3,7 @@
         <h1>Создание нового лота</h1>
         <img class="imgPreview" />
 
-        <form enctype="multipart/form-data" action="http://127.0.0.1:8000/db/newLot" method="post">
+        <form enctype="multipart/form-data" action="https://isteamoor1.pythonanywhere.com/db/newLot" method="post">
             <label for="new label">Назовите ваш товар</label>
             <input type="text" id="new label" name="label">
 
