@@ -1,8 +1,7 @@
 <template>
     <div class='background'>
 
-        <img :src="details.img + '/c'" />
-        <div class="imgPreview" :style="{ 'background-image': 'url(' + imageUrl + ')' }"></div>
+        <img :src="details.img + '/f'" />
 
         <div class='info'>
             <div class='header'>lot#{{ details.id }} - {{ details.label }}</div>
@@ -20,11 +19,6 @@ export default {
     name: 'lot-preview',
     props: {
         details: Object
-    },
-    data() {
-        return {
-            imageUrl: this.details.img + "/f",
-        }
     },
     mounted() {
         console.log(this.details)
@@ -47,10 +41,5 @@ export default {
 img {
     width: 160px;
     background-color: chocolate;
-}
-
-.imgPreview {
-    width: 160px;
-    background-size: cover;
 }
 </style>
