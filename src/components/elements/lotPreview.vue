@@ -23,7 +23,7 @@ export default {
     },
     data() {
         return {
-            imageUrl: this.details.img + "/c",
+            imageUrl: this.details.img + "/f",
         }
     },
     mounted() {
