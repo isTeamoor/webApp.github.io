@@ -1,8 +1,7 @@
 <template>
-    <img src="./ggg.jpg" />
     <div class='background'>
 
-        <img :src="details.img + '/f'" />
+        <img :src="imageUrl" />
 
         <div class='info'>
             <div class='header'>lot#{{ details.id }} - {{ details.label }}</div>
@@ -21,8 +20,28 @@ export default {
     props: {
         details: Object
     },
+    data() {
+        return {
+            imageUrl: null
+        };
+    },
     mounted() {
         console.log(this.details)
+        this.fetchImage();
+    },
+    methods: {
+        async fetchImage() {
+            try {
+                const response = await fetch(this.details.img + '/f');
+                if (!response.ok) {
+                    throw new Error('Ошибка загрузки изображения');
+                }
+                const blob = await response.blob(); // Получаем Blob объект из ответа
+                this.imageUrl = URL.createObjectURL(blob); // Создаем URL для Blob объекта
+            } catch (error) {
+                console.error('Ошибка загрузки изображения:', error);
+            }
+        }
     }
 }
 </script>
