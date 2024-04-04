@@ -25,8 +25,8 @@ router = APIRouter(
 )
 
 def sanitize_filename(filename):
-    allowed_characters = string.ascii_letters + string.digits +"_-."
-    sanitized_filename = ''.join(c for c in filename if c in allowed_characters)
+    forbidden_characters = "\\?%*:|\"\{|}\/<>!$"
+    sanitized_filename = ''.join(c for c in filename if c not in forbidden_characters)
     return sanitized_filename
 
 
@@ -35,6 +35,7 @@ async def createLot(label: str = Form(...), description: str = Form(...), img: U
     img.filename = sanitize_filename(img.filename)
     description = sanitize_filename(description)
     label = sanitize_filename(label)
+    print(description)
 
     ### Сохранение оригинального изображения
     currentDate = datetime.now()
