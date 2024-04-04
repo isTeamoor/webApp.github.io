@@ -1,12 +1,13 @@
 <template>
     <div class='background'>
 
-        <img class="imgPreview" :src="this.details.img + '/c'" />
+        <img :src="details.img + '/c'" />
+        <div class="imgPreview" :style="{ 'background-image': 'url(' + imageUrl + ')' }"></div>
 
         <div class='info'>
-            <div class='header'>lot#{{ this.details.id }} - {{ this.details.label }}</div>
-            <div class='description'>{{ this.details.description }}</div>
-            <div class='bids'>{{ this.details.bids }}</div>
+            <div class='header'>lot#{{ details.id }} - {{ details.label }}</div>
+            <div class='description'>{{ details.description }}</div>
+            <div class='bids'>{{ details.bids }}</div>
         </div>
 
     </div>
@@ -19,6 +20,11 @@ export default {
     name: 'lot-preview',
     props: {
         details: Object
+    },
+    data() {
+        return {
+            imageUrl: this.details.img + "/c",
+        }
     },
     mounted() {
         console.log(this.details)
@@ -41,5 +47,10 @@ export default {
 img {
     width: 160px;
     background-color: chocolate;
+}
+
+.imgPreview {
+    width: 160px;
+    background-size: cover;
 }
 </style>
