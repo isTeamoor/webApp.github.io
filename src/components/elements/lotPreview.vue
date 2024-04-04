@@ -1,7 +1,7 @@
 <template>
     <div class='background'>
 
-        <img :src="imageUrl" />
+        <img class="imgPreview" :src="details.img + '/c'" />
 
         <div class='info'>
             <div class='header'>lot#{{ details.id }} - {{ details.label }}</div>
@@ -22,26 +22,11 @@ export default {
     },
     data() {
         return {
-            imageUrl: null
-        };
+            imageUrl: this.details.img + "/c",
+        }
     },
     mounted() {
         console.log(this.details)
-        this.fetchImage();
-    },
-    methods: {
-        async fetchImage() {
-            try {
-                const response = await fetch(this.details.img + '/f');
-                if (!response.ok) {
-                    throw new Error('Ошибка загрузки изображения');
-                }
-                const blob = await response.blob(); // Получаем Blob объект из ответа
-                this.imageUrl = URL.createObjectURL(blob); // Создаем URL для Blob объекта
-            } catch (error) {
-                console.error('Ошибка загрузки изображения:', error);
-            }
-        }
     }
 }
 </script>
