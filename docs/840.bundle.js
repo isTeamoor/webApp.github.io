@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkauc_app=self.webpackChunkauc_app||[]).push([[840],{840:(e,u,a)=>{a.r(u),a.d(u,{default:()=>p});var n=a(641);const c={},p=(0,a(262).A)(c,[["render",function(e,u){return(0,n.uX)(),(0,n.CE)("div",null," HomePage ")}]])}}]);

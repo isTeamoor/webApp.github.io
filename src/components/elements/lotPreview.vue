@@ -1,4 +1,5 @@
 <template>
+    <img src="./ggg.jpg" />
     <div class='background'>
 
         <img :src="details.img + '/f'" />
