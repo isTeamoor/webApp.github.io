@@ -16,8 +16,8 @@ export default {
     data() {
         return {
             userData: {},
-            tg: Object.keys(window.Telegram.WebApp.initDataUnsafe),
-            tg2: Object.keys(window.Telegram.WebApp.initData),
+            tg: window.Telegram.WebApp.initDataUnsafe,
+            tg2: window.Telegram.WebApp.initData,
         };
     },
     methods: {
