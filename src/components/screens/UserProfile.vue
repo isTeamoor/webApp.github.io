@@ -22,8 +22,8 @@ export default {
         },
     },
     created() {
-        if (window.Telegram.WebApp.hasOwnProperty('user')) {
-            this.userData = window.Telegram.WebApp.user
+        if (window.Telegram.WebApp.initDataUnsafe.hasOwnProperty('user')) {
+            this.userData = window.Telegram.WebApp.initDataUnsafe.user
         } else { this.userData = { 'id': 0, 'first_name': 'undefined', 'last_name': 'undefined', 'username': 'undefined' } }
     }
 }

@@ -40,8 +40,8 @@ export default {
         },
     },
     created() {
-        if (window.Telegram.WebApp.hasOwnProperty('user')) {
-            this.tg = window.Telegram.WebApp
+        if (window.Telegram.WebApp.initDataUnsafe.hasOwnProperty('user')) {
+            this.tg = window.Telegram.WebApp.initDataUnsafe
         } else { this.tg = { 'user': { 'id': 0, 'first_name': 'undefined', 'last_name': 'undefined', 'username': 'undefined' } } }
     }
 }
