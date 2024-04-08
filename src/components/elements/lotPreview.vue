@@ -20,11 +20,6 @@ export default {
     props: {
         details: Object
     },
-    data() {
-        return {
-            imageUrl: this.details.img + "/c",
-        }
-    },
     mounted() {
         console.log(this.details)
     }

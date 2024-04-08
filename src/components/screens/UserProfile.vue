@@ -1,22 +1,31 @@
 <template>
     <div>
-        <p>User ID {{ WebAppInitData.user.id }}</p>
-        <p>First_name {{ WebAppInitData.user.first_name }}</p>
-        <p>Last_name {{ WebAppInitData.user.last_name }}</p>
-        <p>username {{ WebAppInitData.user.username }}</p>
+        <p>User ID {{ userData.id }}</p>
+        <p>First_name {{ userData.first_name }}</p>
+        <p>Last_name {{ userData.last_name }}</p>
+        <p>username {{ userData.username }}</p>
+
+        <button @click="sendToBot"> Send Data</button>
     </div>
 </template>
 <script>
 export default {
     data() {
         return {
-            WebAppInitData: {}
+            userData: {}
         };
     },
+    methods: {
+        sendToBot() {
+            console.log(tg.sendData)
+            let data = "1";
+            tg.sendData(data)
+        },
+    },
     created() {
-        if (window.Telegram.WebApp.hasOwnProperty('user')) {
-            this.WebAppInitData = window.Telegram.WebApp
-        } else { this.WebAppInitData = { 'user': { 'id': 0, 'first_name': 'undefined', 'last_name': 'undefined', 'username': 'undefined' } } }
+        if (tg.hasOwnProperty('user')) {
+            this.userData = tg.user
+        } else { this.userData = { 'user': { 'id': 0, 'first_name': 'undefined', 'last_name': 'undefined', 'username': 'undefined' } } }
     }
 }
 
