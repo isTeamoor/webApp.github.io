@@ -27,6 +27,11 @@
 </template>
 <script>
 export default {
+    data() {
+        return {
+            tg: tg,
+        }
+    },
     methods: {
         showPreview(event) {
             const imgBox = document.querySelector(".imgPreview");
