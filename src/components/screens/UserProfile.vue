@@ -12,19 +12,19 @@
 export default {
     data() {
         return {
-            userData: {}
+            userData: {},
+            tg: window.Telegram.WebApp
         };
     },
     methods: {
         sendToBot() {
-            console.log(tg.sendData)
             let data = "1";
-            tg.sendData(data)
+            this.tg.sendData(data)
         },
     },
     created() {
-        if (tg.hasOwnProperty('user')) {
-            this.userData = tg.user
+        if (this.tg.hasOwnProperty('user')) {
+            this.userData = this.tg.user
         } else { this.userData = { 'user': { 'id': 0, 'first_name': 'undefined', 'last_name': 'undefined', 'username': 'undefined' } } }
     }
 }

@@ -29,7 +29,7 @@
 export default {
     data() {
         return {
-            tg: tg,
+            tg: window.Telegram.WebApp,
         }
     },
     methods: {
