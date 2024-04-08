@@ -13,19 +13,18 @@ export default {
     data() {
         return {
             userData: {},
-            tg: window.Telegram.WebApp
         };
     },
     methods: {
         sendToBot() {
             let data = "1";
-            this.tg.sendData(data)
+            window.Telegram.WebApp.sendData(data)
         },
     },
     created() {
-        if (this.tg.hasOwnProperty('user')) {
-            this.userData = this.tg.user
-        } else { this.userData = { 'user': { 'id': 0, 'first_name': 'undefined', 'last_name': 'undefined', 'username': 'undefined' } } }
+        if (window.Telegram.WebApp.hasOwnProperty('user')) {
+            this.userData = window.Telegram.WebApp.user
+        } else { this.userData = { 'id': 0, 'first_name': 'undefined', 'last_name': 'undefined', 'username': 'undefined' } }
     }
 }
 
