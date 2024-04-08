@@ -20,6 +20,7 @@
             <label for="new img">Добавьте фото товара</label>
             <input type="file" name="img" id="new img" accept="image/*" @change="showPreview" />
 
+            <input type="hidden" name="user_id" value="{{ tg.user.id }}">
             <button type="submit">Выставить лот на торги</button>
         </form>
     </div>
