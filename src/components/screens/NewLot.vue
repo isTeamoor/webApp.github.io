@@ -20,7 +20,7 @@
             <label for="new img">Добавьте фото товара</label>
             <input type="file" name="img" id="new img" accept="image/*" @change="showPreview" />
 
-            <input type="hidden" name="user_id" :value="tg.user.id">
+            <input type="hidden" name="user_id" :value="userData.id">
             <button type="submit">Выставить лот на торги</button>
         </form>
     </div>
@@ -29,8 +29,8 @@
 export default {
     data() {
         return {
-            tg: {},
-        }
+            userData: {},
+        };
     },
     methods: {
         showPreview(event) {
@@ -40,9 +40,9 @@ export default {
         },
     },
     created() {
-        if (window.Telegram.WebApp.initDataUnsafe.hasOwnProperty('user')) {
-            this.tg = window.Telegram.WebApp.initDataUnsafe
-        } else { this.tg = { 'user': { 'id': 0, 'first_name': 'undefined', 'last_name': 'undefined', 'username': 'undefined' } } }
+        this.userData = window.Telegram.WebApp.initDataUnsafe.hasOwnProperty('user') ?
+            window.Telegram.WebApp.initDataUnsafe.user :
+            { 'id': 0, 'first_name': 'undefined', 'last_name': 'undefined', 'username': 'undefined' }
     }
 }
 </script>
