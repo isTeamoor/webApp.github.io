@@ -47,7 +47,7 @@ export default {
             let options = {
                 lot_id: this.details.id,
                 amount: amount,
-                user_id: window.Telegram.WebApp.initDataUnsafe.user || 0,
+                user_id: window.Telegram.WebApp.initDataUnsafe.user.id || 0,
                 date: dateString
             };
             fetch("https://isteamoor1.pythonanywhere.com/db/newBid",
